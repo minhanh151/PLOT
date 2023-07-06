@@ -3,32 +3,32 @@
 cd ..
 
 # custom config
-DATA=your_data_path
+DATA=/Users/miapham/Downloads/Master_Code/CoOp/DATA
 TRAINER=PLOT 
 
 DATASET=$1
 CFG=rn50  # config file
 CTP=end  # class token position (end or middle)
 NCTX=16  # number of context tokens
-# SHOTS=$5  # number of shots (1, 2, 4, 8, 16)
+SHOTS=$2  # number of shots (1, 2, 4, 8, 16)
 CSC=False  # class-specific context (False or True)
-N=$2  # number of proxy
+N=4  # number of proxy
 
-for SHOTS in 1 2 4 8 16
+# for SHOTS in 1 2 4 8 16
+# do
+for SEED in 1
 do
-for SEED in 1 2 3
-do
-DIR=your_work_path/plot-coop/output/OP_N${N}/${DATASET}/${TRAINER}/${CFG}_${SHOTS}shots/nctx${NCTX}_csc${CSC}_ctp${CTP}/seed${SEED}
+DIR=/Users/miapham/Documents/GitHub/PLOT/plot-coop/output/OP_N${N}/${DATASET}/${TRAINER}/${CFG}_${SHOTS}shots/nctx${NCTX}_csc${CSC}_ctp${CTP}/seed${SEED}
 if [ -d "$DIR" ]; then
     echo "Results are available in ${DIR}. Skip this job"
 else
     echo "Run this job and save the output to ${DIR}"
-    python train.py \
+    python /Users/miapham/Documents/GitHub/PLOT/plot-coop/train.py \
     --root ${DATA} \
     --seed ${SEED} \
     --trainer ${TRAINER} \
-    --dataset-config-file configs/datasets/${DATASET}.yaml \
-    --config-file configs/trainers/${TRAINER}/${CFG}.yaml \
+    --dataset-config-file /Users/miapham/Documents/GitHub/PLOT/plot-coop/configs/datasets/${DATASET}.yaml \
+    --config-file /Users/miapham/Documents/GitHub/PLOT/plot-coop/configs/trainers/${TRAINER}/${CFG}.yaml \
     --output-dir ${DIR} \
     TRAINER.PLOT.N_CTX ${NCTX} \
     TRAINER.PLOT.CSC ${CSC} \
@@ -37,4 +37,4 @@ else
     TRAINER.PLOT.N ${N} 
 fi
 done
-done
+# done

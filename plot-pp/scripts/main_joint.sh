@@ -3,7 +3,7 @@
 cd ..
 
 # custom config
-DATA=your_data_path
+DATA=/Users/miapham/Downloads/Master_Code/CoOp/DATA
 PRETRAIN_DIR=your_pretrain_path
 TRAINER=PLOTPP
 DATASET=$1

@@ -15,7 +15,7 @@ Please follow the instructions [DATASETS.md](https://github.com/KaiyangZhou/CoOp
 
 Our `PLOT++` includes two stages, both two running scripts are in `scripts/`. 
 
-To run the first stage, you should firstly run `cd ./scripts` and change `your_data_path` and `your_work_path` in `scripts/main_visiononly.sh`, then you can run the commands `bash main_visiononly.sh DATASET M` under `plot-pp/scripts/`. For example `bash bash main_visiononly.sh caltech101 4`
+To run the first stage, you should firstly run `cd ./scripts` and change `/Users/miapham/Downloads/Master_Code/CoOp/DATA` and `your_work_path` in `scripts/main_visiononly.sh`, then you can run the commands `bash main_visiononly.sh DATASET M` under `plot-pp/scripts/`. For example `bash bash main_visiononly.sh caltech101 4`
 
 `DATASET` takes as input a dataset name, like `caltech101`. 
 
@@ -39,7 +39,7 @@ output
 ```
 you can find the first-stage pretrained model from `seed1/visiononly/model.pth.tar-50`.
 
-To run the second stage, you should change `your_data_path`, `your_pretrain_path` and `your_work_path` in `scripts/main_joint.sh`, then you can run the commands `bash main_joint.sh DATASET M` under `plot-pp/scripts/`. For example `bash main_joint.sh caltech101 4`
+To run the second stage, you should change `/Users/miapham/Downloads/Master_Code/CoOp/DATA`, `your_pretrain_path` and `your_work_path` in `scripts/main_joint.sh`, then you can run the commands `bash main_joint.sh DATASET M` under `plot-pp/scripts/`. For example `bash main_joint.sh caltech101 4`
 
 Note that `DATASET` and `M` should have the same values as the fist stage.
 
@@ -96,4 +96,4 @@ plot++_models
 |   |   |–– |–– seed3/
 ```
 
-To evaluate the first-stage models, you should firstly gain the stage1 model, and store it in `your_pretrain_path`, change `your_data_path`, `your_pretrain_path` and `your_work_path` in `scripts/evaluation.sh`, then you can run the command `bash evaluation.sh DATASET 4` under `plot-pp/scripts/`. For example `bash evaluation.sh imagenet 4`. To evaluate the stage2 models, you should firstly gain the second-stage model and repeat what you do when evaluating the first-stage model.
+To evaluate the first-stage models, you should firstly gain the stage1 model, and store it in `your_pretrain_path`, change `/Users/miapham/Downloads/Master_Code/CoOp/DATA`, `your_pretrain_path` and `your_work_path` in `scripts/evaluation.sh`, then you can run the command `bash evaluation.sh DATASET 4` under `plot-pp/scripts/`. For example `bash evaluation.sh imagenet 4`. To evaluate the stage2 models, you should firstly gain the second-stage model and repeat what you do when evaluating the first-stage model.

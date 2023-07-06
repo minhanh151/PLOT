@@ -91,7 +91,7 @@ def extend_cfg(cfg):
     cfg.TRAINER.PLOTPP.N_CTX = 4  # number of context tokens
     cfg.TRAINER.PLOTPP.CSC = False  # class-specific context
     cfg.TRAINER.PLOTPP.CTX_INIT = True  # initialization words
-    cfg.TRAINER.PLOTPP.PREC = "fp16"  # fp16, fp32, amp
+    cfg.TRAINER.PLOTPP.PREC = "amp"  # fp16, fp32, amp
     cfg.TRAINER.PLOTPP.CLASS_TOKEN_POSITION = "end"  # 'middle' or 'end' or 'front'
     cfg.TRAINER.PLOTPP.N = 4 # number of text prompts
     cfg.TRAINER.PLOTPP.TRADE_OFF = False

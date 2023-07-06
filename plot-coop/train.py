@@ -89,7 +89,7 @@ def extend_cfg(cfg):
     cfg.TRAINER.PLOT.N_CTX = 16  # number of context vectors
     cfg.TRAINER.PLOT.CSC = False  # class-specific context
     cfg.TRAINER.PLOT.CTX_INIT = ""  # initialization words
-    cfg.TRAINER.PLOT.PREC = "fp16"  # fp16, fp32, amp
+    cfg.TRAINER.PLOT.PREC = "amp"  # fp16, fp32, amp
     cfg.TRAINER.PLOT.CLASS_TOKEN_POSITION = "end"  # 'middle' or 'end' or 'front'
     cfg.TRAINER.PLOT.N = 4 # the number of prompts
 
