@@ -235,6 +235,8 @@ class CustomCLIP(nn.Module):
         image_features = image_features[1:]  
         M = image_features.shape[0]
         self.d = image_features.shape[-1]
+        print(image.shape)
+        print(image_features.shape)
 
         prompts = self.prompt_learner()   
         tokenized_prompts = self.tokenized_prompts
@@ -248,7 +250,9 @@ class CustomCLIP(nn.Module):
             text_features =  text_features.contiguous().view(self.N, self.n_cls, self.d)  
             text_feature_pool = text_features.mean(dim=0)
 
-        
+        print(image_features.shape)
+        print(image_feature_pool.shape)
+        print(text_features.shape)
         image_features =  F.normalize(image_features, dim=2) 
         image_feature_pool = F.normalize(image_feature_pool, dim=1)
         text_features = F.normalize(text_features, dim=2)
